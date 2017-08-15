@@ -2,5 +2,7 @@
 Sample php project. Dog day care application
 
 
-##RUN :
+## Running
+```
 php -S localhost:8080
+```
