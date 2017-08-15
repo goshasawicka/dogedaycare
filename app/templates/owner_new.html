@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h1 class="panel-title">Create New Record </h1>
+    </div>
+    <div class="panel-body">
+
+        <form action="{{ path_for('new_owner') }}" method="POST" name="new">
+
+            <div class="form-group">
+                <label for="first_name">Owner First Name</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" value={{ dog.owner_first_name}} >
+            </div>
+            <div class="form-group">
+                <label for="last_name">Owner Last Name</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" value={{ dog.owner_last_name}} >
+            </div>
+            <div class="form-group">
+                <label for="phone">Owner Phone</label>
+                <input type="text" class="form-control" id="phone" name="phone" value={{ dog.owner_phone}} >
+            </div>
+            <div class="form-group">
+                <label for="dog_name">Dog Name</label>
+                <input type="text" class="form-control" id="dog_name" name="dog_name" value={{ dog.dog_name}} >
+            </div>
+            <div class="form-group">
+                <label for="breed">Breed</label>
+                <input type="text" class="form-control" id="breed" name="breed" value={{ dog.breed}} >
+            </div>
+
+            <div>
+                <input class="btn btn-success" name="submit" type="submit" value="Save"/>
+                <a href="{{path_for('owners')}}" class="button btn btn-danger " >Cancel</a>
+            </div>
+        </form>
+
+    </div>
+</div>
+{% endblock %}

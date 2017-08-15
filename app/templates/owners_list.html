@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h1 class="panel-title">Owners </h1>
+    </div>
+    <div class="panel-body">
+        <table id="taskTable" class="table table-hover table-striped dataTable table-responsive" cellspacing="2">
+            <a href="{{ path_for('new_owner') }}" class="button btn btn-success " >New Record</a>
+            <thead>
+            <tr>
+                <th class="col-md-3 ">First Name</th>
+                <th class="col-md-3 ">Last Name</th>
+                <th class="col-md-2 ">Phone</th>
+                <th class="col-md-1 ">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for dog in dogs %}
+                {% include 'owners_row.html' %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

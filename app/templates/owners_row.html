@@ -1,0 +1,18 @@
+<tr>
+    <td class="col-md-3">
+       {{ dog.owner_first_name }}
+    </td>
+    <td class="col-md-3">
+        {{ dog.owner_last_name }}
+    </td>
+    <td class="col-md-2">
+        {{ dog.owner_phone }}
+    </td>
+
+    <td class="col-md-1">
+        <a href="{{ path_for('edit_owner', {'id': dog.id}) }}" >
+            <i class="fa fa-pencil-square-o" title="edit record" ></i></a>
+        <a href="{{ path_for('owner', {'id': dog.id}) }}" >
+            <i class="fa fa-folder-open-o" title="view record"></i></a>
+    </td>
+</tr>

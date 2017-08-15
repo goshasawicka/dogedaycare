@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="panel panel-info">
+    <div class="panel-heading">
+        <h1 class="panel-title">Owner Record </h1>
+    </div>
+    <div class="panel-body">
+
+        <table id="ownertable" class="table table-hover table-striped dataTable table-responsive" cellspacing="2">
+
+            <tbody>
+            <tr>
+                <td class="col-md-3">
+                    Name:
+                </td>
+                <td class="col-md-5">
+                    {{ dog.owner_first_name }} {{ dog.owner_last_name  }}
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-3">
+                    Phone:
+                </td>
+                <td class="col-md-5">
+                    {{ dog.owner_phone }}
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-3">
+                    Dog:
+                </td>
+                <td class="col-md-5">
+                    {{ dog.dog_name }} ({{dog.breed}})
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <a href="{{ path_for('owners') }}" class="button btn btn-info " >Back to list</a>
+    </div>
+</div>
+
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h1 class="panel-title">Invoices </h1>
+    </div>
+    <div class="panel-body">
+        <a href="{{ path_for('new_invoice') }}" class="button btn btn-warning " >New Invoice</a>
+        <table id="taskTable" class="table table-hover table-striped dataTable table-responsive" cellspacing="2">
+            <thead>
+            <tr>
+                <th class="col-md-2 ">Date</th>
+                <th class="col-md-5 ">Memo</th>
+                <th class="col-md-1 ">Amount</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for invoice in invoices %}
+                <tr>
+                    <td class="col-md-2">{{invoice.date}}</td>
+                    <td class="col-md-5">{{invoice.memo}}</td>
+                    <td class="col-md-1">{{invoice.amount}}</td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

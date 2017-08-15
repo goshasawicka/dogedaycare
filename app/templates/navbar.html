@@ -1,0 +1,31 @@
+<div class="navbar navbar-default navbar-fixed-top sticky-navigation" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+                <span class="icon icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{path_for('home')}}">
+                <div style="float: left">
+                </div>
+                <div style="float: left"><i class="fa fa-pied-piper"></i>Doge </div>
+            </a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right main-nav">
+            <li>
+                <a href="{{path_for('home')}}" class="smoothScroll">
+                <i class="fa fa-home"></i> Home
+            </a>
+            </li>
+            <li><a href="{{path_for('owners')}}" class="smoothScroll"><i class="fa fa-users"></i> Owners</a></li>
+            <li><a href="{{path_for('dogs')}}" class="smoothScroll"><i class="fa fa-paw"></i> Dogs</a></li>
+
+            <li><a href="{{path_for('invoices')}}" class="smoothScroll"><i class="fa fa-money"></i>Payments</a></li>
+
+            <li><a href="{{path_for('about')}}" class="smoothScroll">About</a></li>
+            <li><a href="{{path_for('company_info')}}" class="smoothScroll">Company Info</a></li>
+        </ul>
+    </div>
+</div>
