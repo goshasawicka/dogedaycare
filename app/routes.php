@@ -13,17 +13,6 @@ $app->get('/', function ($request, $response, $args) use ($app) {
     $this->view->render($response, 'hello.html', array('title' =>$title,'body' =>$body));
 })->setName('home');
 
-$app->get('/company_info', function ($request, $response, $args) use ($app) {
-
-    $this->view->render($response, 'company_info.html', []);
-})->setName('company_info');
-
-$app->get('/about', function ($request, $response, $args) use ($app) {
-
-    $this->view->render($response, 'about.html', []);
-})->setName('about');
-
-
 //OWNERS:
 
 $app->get('/owners', function($request, $response, $args) use ($app, $db) {
@@ -135,9 +124,6 @@ $app->get('/dog/{id}', function($request, $response, $args) use ($app, $db){
 // INVOICES:
 $app->get('/invoices', function($request, $response, $args) use ($app, $db) {
     $sql = "SELECT * FROM dogs_table INNER JOIN invoices on dogs_table.id = invoices.dog_id;";
-//    $invoicesPDO = $db->prepare($sql);
-//    $invoicesPDO->execute([]);
-//    $invoices = $invoicesPDO->fetchAll();
     $invoices = $db->query($sql)->fetchAll();
     $this->view->render($response, 'invoices.html', array('invoices'=>$invoices));
     $db = null;

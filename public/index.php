@@ -4,7 +4,6 @@ use \Psr\Http\Message\ResponseInterface as Response;
 
 require '../vendor/autoload.php';
 require '../config.php';
-//require '../vendor/slim/slim.php';
 
 $app = new \Slim\App(
     ["settings" => $config]
